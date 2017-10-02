@@ -1,0 +1,116 @@
+.slee-element
+  position: fixed
+  display: inline-block
+  width: 360px
+  height: auto
+
+  &.top
+    top: 18px
+
+  &.left
+    left: 18px
+
+  &.bottom
+    bottom: 18px
+
+  &.right
+    right: 18px
+
+  .slee-notification
+    position: relative
+    display: inline-block
+    overflow: hidden
+    width: 100%
+    height: 72px
+    transition: all .3s ease-in-out, height .1s .2s ease-in-out
+
+    &.hide
+      height: 0
+      opacity: 0
+      margin: 0 !important
+      visibility: hidden
+
+      &.shrink
+        transform: scale(.7)
+
+    &.pointer-events
+
+      &:hover
+        opacity: .3
+        filter: blur(3px)
+
+    .slee-notification-content
+      width: 100%
+      height: 72px
+      position: relative
+      display: inline-block
+      box-sizing: border-box
+      padding: 12px 16px
+      border-radius: 2px
+      box-shadow: 0 0 16px rgba(0,0,0,.05)
+      opacity: .9
+      border: 2px solid
+      font-family: sans-serif
+
+      .slee-title
+        display: inline-block
+        position: relative
+        width: 100%
+        line-height: 22px
+        font-weight: 600
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+
+      .slee-description
+        display: inline-block
+        position: relative
+        width: 100%
+        line-height: 16px
+        font-size: .92em
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+
+      &.slee-picture
+
+        .slee-title, .slee-description
+          width: calc(100% - 36px)
+          margin-left: 36px
+
+        .slee-picture-wrapper
+          display: flex
+          position: absolute
+          top: 0
+          left: 8px
+          height: 100%
+          width: 36px
+          align-items: center
+          justify-content: center
+
+          img
+            display: block
+            width: 30px
+
+    &.neutral div
+      background: #e4e4e4
+      border-color: #dbdbdb
+
+    &.success div
+      background: lawngreen
+      border-color: #7af200
+
+    &.info div
+      background: #1e85f0
+      border-color: #1e78dc
+      color: white
+
+    &.warning div
+      background: #f18100
+      border-color: #df7700
+      color: white
+
+    &.error div
+      background: #ec1e26
+      border-color: #da1d25
+      color: white
