@@ -1,7 +1,7 @@
 import Settings from "./Modules/Settings";
 import Core from "./Modules/Core";
 
-module.exports = {
+module.exports = (() => { return {
 
     configure(settings = {}) {
         Settings.save(settings);
@@ -38,4 +38,4 @@ module.exports = {
         Core.pushNotification();
     }
 
-};
+}})();
