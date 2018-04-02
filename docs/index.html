@@ -16,21 +16,28 @@
     <h1>Slee</h1>
     <h2>Simple and yet amazing toast engine</h2>
 
-    <button class="toast-1" onclick="Slee.neutral()">Toast #1</button>
-    <button class="toast-2" onclick="Slee.success()">Toast #2</button>
-    <button class="toast-3" onclick="Slee.info()">Toast #3</button>
-    <button class="toast-4" onclick="Slee.warning()">Toast #4</button>
-    <button class="toast-5" onclick="Slee.error()">Toast #5</button>
+    <button class="toast-1" onclick="Slee.neutral()">Neutral</button>
+    <button class="toast-2" onclick="Slee.success()">Success</button>
+    <button class="toast-3" onclick="Slee.info()">Info</button>
+    <button class="toast-4" onclick="Slee.warning()">Warning</button>
+    <button class="toast-5" onclick="Slee.error()">Danger</button>
 
-    <script src="../dist/bundle.js"></script>
+    <!--<script src="./../dist/bundle.js"></script>-->
+    <script src="https://raw.githubusercontent.com/lamka02sk/slee/master/dist/bundle.js"></script>
 
     <script>
 
         Slee.configure({
             type: 'info',
             gap: 16,
-            position: 'top right'
+            position: 'top center',
+            animation: 'shrink',
+            title: 'Lorem ipsum',
+            description: 'Lorem ipsum dolor sit amet',
+            picture: 'https://vignette.wikia.nocookie.net/glee/images/8/8a/Balloons_stock_2_png_by_mysticmorning-d3kds2w.png/revision/latest?cb=20131008111520'
         });
+
+        Slee.prepare();
 
     </script>
 

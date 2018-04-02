@@ -14,23 +14,23 @@ module.exports = {
 
     },
 
-    success(settings = { type: 'success' }) {
+    success(settings = {}) {
         Core.pushNotification('success', settings);
     },
 
-    info(settings = { type: 'info' }) {
+    info(settings = {}) {
         Core.pushNotification('info', settings);
     },
 
-    warning(settings = { type: 'warning' }) {
+    warning(settings = {}) {
         Core.pushNotification('warning', settings);
     },
 
-    error(settings = { type: 'error' }) {
+    error(settings = {}) {
         Core.pushNotification('error', settings);
     },
 
-    neutral(settings = { type: 'neutral' }) {
+    neutral(settings = {}) {
         Core.pushNotification('neutral', settings);
     },
 

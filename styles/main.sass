@@ -1,8 +1,16 @@
+$messageHeight: 72px
+$paddingSize: 64px
+
+=animationBase()
+  margin-top: -$paddingSize - $messageHeight
+
 .slee-element
   position: fixed
-  display: inline-block
+  display: flex
+  flex-flow: column-reverse
   width: 360px
   height: auto
+  z-index: 9999999
 
   &.top
     top: 18px
@@ -16,22 +24,47 @@
   &.right
     right: 18px
 
+  &.center
+    left: 50%
+    transform: translateX(-50%)
+
   .slee-notification
     position: relative
     display: inline-block
-    overflow: hidden
     width: 100%
-    height: 72px
-    transition: all .3s ease-in-out, height .1s .2s ease-in-out
+    margin-top: -$paddingSize
+    left: -$paddingSize
+    visibility: hidden
+    opacity: 0
+    height: 0
+    padding: $paddingSize 0 0 $paddingSize
 
-    &.hide
-      height: 0
-      opacity: 0
-      margin: 0 !important
-      visibility: hidden
+    &.ease, &.shrink, &.push, &.fly
+      transition: all .3s ease-in-out
 
       &.shrink
         transform: scale(.7)
+
+      &.animate
+        height: $messageHeight
+        visibility: visible
+        opacity: 1
+
+        &.shrink
+          transform: scale(1)
+
+    &.hide
+      height: 0
+      opacity: 0 !important
+      visibility: hidden !important
+      margin-bottom: 0 !important
+
+      &.ease
+        +animationBase
+
+      &.shrink
+        +animationBase
+        transform: scale(.7) !important
 
     &.pointer-events
 
@@ -46,10 +79,9 @@
       display: inline-block
       box-sizing: border-box
       padding: 12px 16px
-      border-radius: 2px
-      box-shadow: 0 0 16px rgba(0,0,0,.05)
+      border-radius: 10px
+      box-shadow: 0 0 $paddingSize rgba(0,0,0,.08)
       opacity: .9
-      border: 2px solid
       font-family: sans-serif
 
       .slee-title
@@ -93,24 +125,21 @@
             width: 30px
 
     &.neutral div
-      background: #e4e4e4
-      border-color: #dbdbdb
+      background: #f0f0f0
+      box-shadow: 0 0 $paddingSize rgba(0,0,0,.05)
 
     &.success div
-      background: lawngreen
-      border-color: #7af200
+      background: #17b941
+      color: white
 
     &.info div
       background: #1e85f0
-      border-color: #1e78dc
       color: white
 
     &.warning div
-      background: #f18100
-      border-color: #df7700
-      color: white
+      background: #f1d500
+      color: black
 
     &.error div
-      background: #ec1e26
-      border-color: #da1d25
+      background: #ec202e
       color: white

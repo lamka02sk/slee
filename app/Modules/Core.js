@@ -97,7 +97,7 @@ export default {
 
             let pictureElement = this.createElement('img', {
                 src: picture,
-                alt: picture
+                alt: ''
             });
 
             pictureWrapper.appendChild(pictureElement);
@@ -117,11 +117,14 @@ export default {
         if(clickHide && !action)
             this.clickToHide(notificationElement);
 
-        if(!!action)
+        if(!!action) {
             this.createAction(notificationElement, action);
+        }
 
         notificationElement.appendChild(notificationContent);
         this.elements[this.positions.indexOf(pos)].appendChild(notificationElement);
+
+        setTimeout(() => notificationElement.classList.add('animate'), 20);
 
     },
 
@@ -141,7 +144,7 @@ export default {
                     element.removeEventListener('mouseover', mouseOver);
                     element.removeEventListener('mouseout', mouseOut);
 
-                }, 300);
+                }, Settings.data.animation ? 300 : 0);
 
             }, delay);
 
