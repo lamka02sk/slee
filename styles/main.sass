@@ -12,22 +12,6 @@ $paddingSize: 64px
   height: auto
   z-index: 9999999
 
-  &.top
-    top: 18px
-
-  &.left
-    left: 18px
-
-  &.bottom
-    bottom: 18px
-
-  &.right
-    right: 18px
-
-  &.center
-    left: 50%
-    transform: translateX(-50%)
-
   .slee-notification
     position: relative
     display: inline-block
@@ -39,7 +23,15 @@ $paddingSize: 64px
     height: 0
     padding: $paddingSize 0 0 $paddingSize
 
-    &.ease, &.shrink, &.push, &.fly
+    &.push
+      margin-left: 96px
+
+    &.animate
+      height: $messageHeight
+      visibility: visible
+      opacity: 1
+
+    &.ease, &.shrink, &.push
       transition: all .3s ease-in-out
 
       &.shrink
@@ -53,6 +45,9 @@ $paddingSize: 64px
         &.shrink
           transform: scale(1)
 
+        &.push
+          margin-left: 0
+
     &.hide
       height: 0
       opacity: 0 !important
@@ -65,6 +60,11 @@ $paddingSize: 64px
       &.shrink
         +animationBase
         transform: scale(.7) !important
+
+      &.push
+        margin-left: 96px !important
+        margin-bottom: -$paddingSize !important
+        z-index: -1
 
     &.pointer-events
 
@@ -190,6 +190,38 @@ $paddingSize: 64px
       border-top:
         left-radius: 3px
         right-radius: 3px
+
+  &.top
+    top: 18px
+
+  &.left
+    left: 18px
+
+    .slee-notification
+      &.push
+        margin-left: -96px
+      &.hide.push
+        margin-left: -96px !important
+
+  &.bottom
+    bottom: 18px
+
+    .slee-notification
+      &.push
+        margin-bottom: 24px + $paddingSize !important
+      &.push.animate
+        margin-top: -$paddingSize !important
+        margin-bottom: 16px !important
+      &.hide.push
+        margin-bottom: 16px !important
+        margin-top: - 2 * $paddingSize !important
+
+  &.right
+    right: 18px
+
+  &.center
+    left: 50%
+    transform: translateX(-50%)
 
 @keyframes progress
   0%

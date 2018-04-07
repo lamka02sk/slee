@@ -1,6 +1,6 @@
 {
   "name": "slee",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Simple and yet amazing toast engine",
   "main": "./dist/bundle.js",
   "scripts": {

@@ -26,7 +26,7 @@ export default {
         // Boolean [false] | true, false
         progress: false,
 
-        // String | Boolean [false] | false, ease, shrink, // TODO: push, fly
+        // String | Boolean [false] | false, ease, shrink, push
         animation: false,
 
         // Function | Boolean [false] | false, function
