@@ -1,7 +1,7 @@
 # Slee v1.2
 > Simple and yet amazing toast engine. Notifications have never been easier.
 
-* NOTE: * This is work in progress, may contain bugs or be unstable. Please consider this before using in production.
+**NOTE:** This is work in progress, may contain bugs or be unstable. Please consider this before using in production.
 
 ## Features
 - Small
@@ -110,62 +110,77 @@ Slee.create();
 These options are used to configure Slee instances locally or globally.
 
 #### `autoHide`
-* Boolean | default: `true` *
+**Boolean | default: `true`**
+
 When set to `true` all notifications expire after specified time.
 
 #### `clickToHide`
-* Boolean | default: `true` *
+**Boolean | default: `true`**
+
 When set to `false`, notification can only be dismissed either after specified time or by clicking on the close button.
 
 #### `hideDelay`
-* Integer | default: `4000` | allowed: `1` or more *
+**Integer | default: `4000` | allowed: `1` or more**
+
 Time in milliseconds after which the notification is automatically closed.
 
 #### `type`
-* String | default: `success` | allowed: `success`, `info`, `warning`, `error`, `neutral` *
+**String | default: `success` | allowed: `success`, `info`, `warning`, `error`, `neutral`**
+
 Used within `create()` method to create notification of specified type.
 
 #### `gap`
-* Integer | default: `12` | allowed: `0` or more *
+**Integer | default: `12` | allowed: `0` or more**
+
 Size of gap between 2 notifications in px.
 
 #### `position`
-* String | default: 'top right' | allowed: `top right`, `top center`, `top left`, `bottom left`, `bottom center`,
-`bottom right` *
+**String | default: 'top right' | allowed: `top right`, `top center`, `top left`, `bottom left`, `bottom center`,
+`bottom right`**
+
 Position on the screen where will be all pushed notifications displayed.
 
 #### `closeButton`
-* Boolean | default: `false` *
+**Boolean | default: `false`**
+
 If set to `true`, close button in the right top corner will be displayed and enabled.
 
 #### `progress`
-* Boolean | default: `false` *
+**Boolean | default: `false`**
+
 Shows progress bar in the bottom part of notification signalising how much time is left before auto dismiss.
 
 #### `animation`
-* String or Boolean | default: [Boolean] `false` | allowed: [Boolean] `false`, `ease`, `shrink`, `push` *
+**String or Boolean | default: [Boolean] `false` | allowed: [Boolean] `false`, `ease`, `shrink`, `push`**
+
 When set to `false`, notifications will not be animated.
 
 #### `action`
-* Funtion or Boolean | default: [Boolean] `false` *
+**Funtion or Boolean | default: [Boolean] `false`**
+
 Allows to set callback function that executes after user clicks on notification.
 
 #### `redirect`
-* String or Boolean | default: [Boolean] `false` *
+**String or Boolean | default: [Boolean] `false`**
+
 Takes an URL. If specified, Slee opens a new tab with given URL after user clicks on notification.
 
 #### `title`
-* String or Boolean | default: [Boolean] `false` *
+**String or Boolean | default: [Boolean] `false`**
+
 Title of notification
 
 #### `description`
-* String or Boolean | default: [Boolean] `false` *
+**String or Boolean | default: [Boolean] `false`**
+
 Description of notification
 
 #### `picture`
-* String or Boolean | default: [Boolean] `false` *
+**String or Boolean | default: [Boolean] `false`**
+
 You can also display icon or picture inside you notification!
 
 #### `pointerEvents`
-* Boolean | default: `false` *
+**Boolean | default: `false`**
+
 When set to `true`, notifications gets blurry and see-through on hover.
