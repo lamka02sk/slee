@@ -121,6 +121,41 @@ export default {
             this.createAction(notificationElement, action);
         }
 
+        const closeButton = settings.closeButton ? settings.closeButton : data.closeButton;
+
+        if(closeButton) {
+
+            let closeElement = this.createElement('span', {
+                'class': 'slee-close-button'
+            });
+
+            closeElement.addEventListener('click', () => this.hideNotification(notificationElement, 0));
+            notificationElement.appendChild(closeElement);
+
+        }
+
+        const redirect = settings.redirect ? settings.redirect : data.redirect;
+
+        if(redirect) {
+
+            notificationElement.classList.add('redirect');
+            notificationContent.addEventListener('click', () => window.open(redirect, '_blank'));
+
+        }
+
+        const progress = settings.progress ? settings.progress : data.progress;
+
+        if(progress) {
+
+            let progressElement = this.createElement('div', {
+                'class': 'slee-progress',
+                'style': 'animation-duration: ' + (hideDelay / 1000) + 's'
+            });
+
+            notificationContent.appendChild(progressElement);
+
+        }
+
         notificationElement.appendChild(notificationContent);
         this.elements[this.positions.indexOf(pos)].appendChild(notificationElement);
 

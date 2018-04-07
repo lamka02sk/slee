@@ -21,10 +21,10 @@ export default {
         position: 'top right',
 
         // Boolean [false] | true, false
-        //closeButton: false,  TODO: Later...
+        closeButton: false,
 
         // Boolean [false] | true, false
-        //progress: false,  TODO: Later...
+        progress: false,
 
         // String | Boolean [false] | false, ease, shrink, // TODO: push, fly
         animation: false,
@@ -33,7 +33,7 @@ export default {
         action: false,
 
         // String | Boolean [false] | false, "string"
-        //redirect: false,  TODO: Later...
+        redirect: false,
 
         // String | Boolean [false] | false, "string"
         title: false,
