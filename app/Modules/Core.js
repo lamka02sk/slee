@@ -148,7 +148,7 @@ export default {
         if(progress) {
 
             let progressElement = this.createElement('div', {
-                'class': 'slee-progress',
+                'class': 'slee-progress animate',
                 'style': 'animation-duration: ' + (hideDelay / 1000) + 's'
             });
 
@@ -164,6 +164,8 @@ export default {
     },
 
     hideNotification(element, delay) {
+
+        const progressElement = element.querySelector('.slee-progress');
 
         function createTimer() {
 
@@ -186,10 +188,12 @@ export default {
         }
 
         function mouseOver() {
+            if(progressElement) progressElement.classList.remove('animate');
             clearInterval(timer);
         }
 
         function mouseOut() {
+            if(progressElement) progressElement.classList.add('animate');
             timer = createTimer();
         }
 

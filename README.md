@@ -10,6 +10,12 @@
 - Easy to install and use with npm or yarn
 - Works with webpack
 
+## Newest release v1.2.2
+- Fixed responsive version
+- Fixed progress bar after hover
+- Fixed text opacity and picture wrapper background
+- Larger close button on mobile devices
+
 ## How to install slee?
 ### npm and yarn
 ```javascript
@@ -184,3 +190,15 @@ You can also display icon or picture inside you notification!
 **Boolean | default: `false`**
 
 When set to `true`, notifications gets blurry and see-through on hover.
+
+## TODO list for possible v2.0
+- Swipe to dismiss on mobile
+- Enhance responsive version
+- Option to use icon fonts inside as picture
+- Reversing order of notifications
+- Better redirect type
+- Auto toast height
+- Custom action buttons
+- New "loading" type
+- webpack 4
+- Return instance after created to allow change notifications on the fly
