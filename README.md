@@ -1,3 +1,5 @@
+**⚠️ WARNING:** This repository is moved to Gitlab (https://gitlab.com/lamka02sk/slee) and no longer updated here.
+
 # Slee v1.2
 > Simple and yet amazing toast engine. Notifications have never been easier.
 
